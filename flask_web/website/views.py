@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Post
+from .models import Post, User
 from . import db, app
 import json
 import os
@@ -25,16 +25,19 @@ def main_page():
 @views.route("/lost")
 def lost():
     posts = Post.query.filter_by(lostfound='lost').all()
+    users = User.query.all()
     # print(posts)
-    return render_template("posts.html", lost_page="active", posts=posts)
+    return render_template("posts.html", lost_page="active", posts=posts, users=users)
 
 
 @login_required   # you haven't acsess to home page if you are not login
 @views.route("/found")
 def found():
     posts = Post.query.filter_by(lostfound='found').all()
+    users = User.query.all()
 
-    return render_template("posts.html", found_page="active", posts=posts)
+
+    return render_template("posts.html", found_page="active", posts=posts, users=users)
 
 @login_required   # you haven't acsess to home page if you are not login
 @views.route("/profile")
