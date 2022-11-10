@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Main{% endblock %}
+
+
+{% block content %}
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner header-text">
+        <div class="banner-item-01">
+          <div class="text-content">
+            <h2>Best Offer</h2>
+            <h4>A website for finding lost things, animals and people</h4>
+          </div>
+        </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    <div class="best-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>How to stop losing stuff?</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="left-content">
+              <h4>Fighting pathological absent-mindedness!</h4>
+              <p> There are people who remain focused under any circumstances, and some people literally suffer from their inattention. High busyness, multitasking, stress and fatigue make us more forgetful.</p>
+              <ul class="featured-list">
+                <li><a>Put everything in its place. It's very wise to put everything in its place.</a></li>
+                <li><a>Block all attempts of the brain to switch to something else and try to hover in the clouds.</a></li>
+                <li><a>Don't hoard things, putting them off for later. When a task comes up, do it.</a></li>
+                <li><a>Do not put anything in your pockets - they will not replace a bag, but the phone can easily fall out of the pocket.</a></li>
+                <li><a>Be sure to put everything in a bag or bag as soon as you stop using it.</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="right-image">
+              <img src="{{ url_for('static', filename='images/photo4.png') }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
