@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+     <!-- Page Content -->
+    <div class="page-heading products-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="container rounded bg-white mt-5 mb-5">
+<div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://cdn.icon-icons.com/icons2/1674/PNG/512/person_110935.png"></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile</h4>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="email"><b class="text-info">Email</b></label><span class="form-control">{{ email }}</span></div>
+                    <div class="col-md-12"><label class="full-name"><b class="text-info">Full-name</b></label><span class="form-control">{{ full_name }}</span></div>
+                </div>
+                <div class="row mt-12">
+                    <div class="col-md-6"><label class="phone-number"><b class="text-info">Phone-number</b></label><span class="form-control">{{ phone }}</span></div>
+                    <div class="col-md-6"><label class="group"><b class="text-info">Group</b></label><span class="form-control">{{ group }}</span></div>
+                </div>
+                <br>
+                <hr>
+                <center>
+                <a class="mt-5 text-center" href="/profile/add_post"><button class="btn btn-primary profile-button" type="button">Add post</button></a>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

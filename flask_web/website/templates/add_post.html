@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Add post{% endblock %}
+
+{% block content %}
+
+
+     <!-- Page Content -->
+    <div class="page-heading products-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://cdn.icon-icons.com/icons2/1674/PNG/512/person_110935.png"></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Add post</h4>
+                </div>
+                <form method = "POST" enctype = "multipart/form-data">
+
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="title">Title</label><input type="text" class="form-control" name="title" placeholder="Enter your title" value=""></div>
+                        <div class="col-md-12"><label class="content">Content</label><input type="text" class="form-control" name="content" placeholder="Enter your content" value=""></div>
+                    </div>
+                    <div class="row mt-2">
+
+                    <div class="col-md-6">
+                        <center>
+                        <input id="lost" name="method" type="radio" class="form-check-input" checked value="lost" required="">
+                        <label class="form-check-label" for="lost">Lost</label>
+                        </center>
+                    </div>
+                    <div class="col-md-6">
+                        <center>
+                        <input id="found" name="method" type="radio" class="form-check-input" value="found" required="">
+                        <label class="form-check-label" for="found">Found</label>
+                        </center>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="image">Upload image</label><input type="file" name="img" id="upload-image" accept="image/*" multiple></div>
+                        {%for message in get_flashed_messages()%}
+					        <span style="color:red">{{message}}</span>
+                        {%endfor%}
+                        <button class="btn btn-primary profile-button mt-5" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

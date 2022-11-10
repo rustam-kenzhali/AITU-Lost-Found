@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Posts{% endblock %}
+
+
+{% block content %}
+
+    <!-- Page Content -->
+    <div class="page-heading products-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lost-items">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="filters-content">
+                <div class="row grid">
+                    {% for post in posts %}
+                    <div class="col-lg-4 col-md-4 all">
+                      <div class="lost-item" style="height: 550px">
+                        <a href="#"><img style="height: 300px" src="/static/files/{{ post.image }}" alt=""></a>
+                        <div class="down-content">
+                          <h4>{{ post.title }}</h4>
+                          <h7>{{ post.content }}</h7>
+
+                          <p><label class="date">Date: </label> {{ post.date }}</p>
+                          <h7>{{ post.author }}</h7>
+
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <ul class="pages">
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
