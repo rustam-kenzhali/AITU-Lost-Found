@@ -65,7 +65,6 @@ def sign_up():
 
 @auth.route('sign_up/email_comfirm', methods=['GET', 'POST'])
 def email_confirm():
-    print(session['send_code'])
     if current_user.is_authenticated:
         flash('You already logged in!', category='error')
         return redirect(url_for('views.main_page'))
